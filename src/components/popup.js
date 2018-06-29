@@ -14,7 +14,6 @@ class Popup extends Component{
   }
   // 取消按钮操作
   close () {
-    console.log(this.props.planlist.show);
     let b = this.props.planlist.show;
     this.setState({
       id: '',

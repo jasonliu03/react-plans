@@ -7,18 +7,18 @@ const initialState = {
   toModifiedItem: {}
 };
 
-Array.prototype.indexOf = function(id) {
-for (var i = 0; i < this.length; i++) {
-if (this[i].id == id) return i;
-}
-return -1;
+Array.prototype.locateAt = function(id) {
+  for (var i = 0; i < this.length; i++) {
+    if (this[i].id == id) return i;
+  }
+  return -1;
 };
 
 Array.prototype.update = function(id, newItem) {
-var index = this.indexOf(id);
-if (index > -1) {
-this.splice(index, 1, newItem);
-}
+  var index = this.locateAt(id);
+  if (index > -1) {
+    this.splice(index, 1, newItem);
+  }
 };
 
 const planReducer = function(state = initialState, action) {
@@ -34,6 +34,7 @@ const planReducer = function(state = initialState, action) {
       return Object.assign({}, state, { showModify: action.show, toModifiedItem: toModified[0] });
     // 修改计划
     case types.MODIFY:
+        console.log("types.MODIFY:", action.id);
         list.update(action.id, action.item);
       return Object.assign({}, state, { planlist: list });
     // 删除计划

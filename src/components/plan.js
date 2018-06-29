@@ -7,7 +7,6 @@ import {show, deletePlan, showModify} from '../actions/plan.js';
 class Plan extends Component {
 	constructor(props) {
 		super(props);
-		console.log(props)
 	}
   show () {
     let b = this.props.planlist.show;
