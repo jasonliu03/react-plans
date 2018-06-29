@@ -6,6 +6,22 @@ export function addPlan(item) {
     item
   };
 }
+// 显示修改计划box
+export function showModify(show, id) {
+  return {
+    type: types.SHOWMODIFY,
+    show,
+    id
+  };
+}
+// 修改计划
+export function modifyPlan(id, item) {
+  return {
+    type: types.MODIFY,
+    id,
+    item
+  }
+}
 // 删除计划
 export function deletePlan(id) {
   return {

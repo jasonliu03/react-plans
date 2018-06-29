@@ -14,7 +14,6 @@ const Topic = ({ match }) => (
 class TestRouter extends Component {
     constructor(props) {
         super(props);
-        console.log(this.props)
     }
     render () {
         return (

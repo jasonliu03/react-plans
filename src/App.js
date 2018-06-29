@@ -10,6 +10,7 @@ import logo from './logo.svg'
 import Plan from './components/plan.js'
 import Home from './components/home.js'
 import Popup from './components/popup.js'
+import Modify from './components/modify.js'
 import TestRouter from './components/testrouter.js'
 import Detail from './components/detail.js'
 import './App.css'
@@ -45,6 +46,7 @@ class App extends Component {
                 </div>
               </Router>
             </div>  
+          <Modify />
           <Popup />
         </div>
       </Provider>

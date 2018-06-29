@@ -8,7 +8,6 @@ class Detail extends Component {
         super(props);
         // 根据路由 id 跟 store 做过滤
         let item = props.planlist.planlist.filter((data) => data.id == props.match.params.id)
-        console.log(item)
         this.state = {
             plan: item[0]
         }

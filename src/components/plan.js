@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import store from '../redux/store.js';
-import {show, deletePlan} from '../actions/plan.js';
+import {show, deletePlan, showModify} from '../actions/plan.js';
 
 
 class Plan extends Component {
@@ -12,6 +12,10 @@ class Plan extends Component {
   show () {
     let b = this.props.planlist.show;
     store.dispatch(show(!b));
+  }
+  modify (id) {
+    let b = this.props.planlist.showModify;
+    store.dispatch(showModify(!b, id));
   }
   delete (id) {
   	store.dispatch(deletePlan(id));
@@ -39,6 +43,7 @@ class Plan extends Component {
 								return (
 									<tr key={index}>
 										<td className="plan-title" onClick={this.detail.bind(this, item.id)}>{item.title}</td>
+										<td className="plan-delect" onClick={this.modify.bind(this, item.id)}>修改</td>
 										<td className="plan-delect" onClick={this.delete.bind(this, item.id)}>删除</td>
 									</tr>
 								)
